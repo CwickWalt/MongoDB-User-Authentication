@@ -13,21 +13,26 @@ router.get('', (req, res, next) => {
 });
 
 router.get('/signup', (req, res, next) => {
-
+    res.sendFile('signup.html', { root: '../View/signup/' });
 });
 
 router.get('/login', (req, res, next) => {
     res.sendFile('login.html', { root: '../View/login/'})
 });
 
+router.get('/redirect', (req, res, next) => {
+    res.sendFile('redirect.html', { root: '../View/redirect/'})
+})
+
 // post requests
 
 router.post('/signup', (req, res, next) => {
+    console.log(req.body);
     bcrypt.hash(req.body.password, 10)
     .then(hash => {
         const user = new User({
             email: req.body.email,
-            name: req.body.name,
+            username: req.body.username,
             password: hash
         });
         user.save()

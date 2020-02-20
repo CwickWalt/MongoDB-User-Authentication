@@ -10,23 +10,19 @@
 </head>
 <body>
     <!-- add PHP form validation and save to database -->
-    <form id="loginForm" action="/" method="post">
-        <div class="form-group">
-            <label for="email">Email address</label>
-            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-        </div>
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" class="form-control" id="password" placeholder="Password">
-        </div>
-            <input type="button" onclick="submitForm()" value="Submit" class="btn btn-primary"></input>
+    <form action="/signup" method="POST">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" name="username" placeholder="Username">
+
+        <label for="email">Email address</label>
+        <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+
+        <label for="password">Password</label>
+        <input type="password" class="form-control" name="password" placeholder="Password">
+
+        <input type="submit" value="submit" class="btn btn-primary"></input>
     </form>
-    <script>
-            submitForm = () => {
-                let formres = document.getElementById('loginForm').submit();
-            }
-    </script>
     <script 
             src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
             integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" 
